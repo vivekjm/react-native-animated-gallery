@@ -36,7 +36,7 @@ export type animatedGalleryProps = {
 
 
     /**
-    * Set the border color for thump nail 
+    * Disable the fullscreen view of image
     */
     disablefullScreen?: boolean;
 
