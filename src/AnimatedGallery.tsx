@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import {
   FlatList,
   Image,
@@ -7,10 +7,10 @@ import {
   Dimensions,
   StyleSheet,
   TouchableOpacity,
-} from 'react-native';
-import {animatedGalleryProps} from './AnimatedGallery.type';
+} from "react-native";
+import { animatedGalleryProps } from "./AnimatedGallery.type";
 
-const {width, height} = Dimensions.get('screen');
+const { width, height } = Dimensions.get("screen");
 
 export const AnimatedGallery = (props: animatedGalleryProps) => {
   /**
@@ -53,7 +53,7 @@ export const AnimatedGallery = (props: animatedGalleryProps) => {
   const IMAGE_SIZE = imageSize ? imageSize : 80;
   const SPACING = spacing ? spacing : 10;
   const THUMP_BORDER_WIDTH = thumpBorderWidth ? thumpBorderWidth : 2;
-  const THUMP_BORDER_COLOR = thumpBorderColor ? thumpBorderColor : '#ffff';
+  const THUMP_BORDER_COLOR = thumpBorderColor ? thumpBorderColor : "#ffff";
 
   /**
    * when the compoent mounts the value from the imageUrl props is locally saved to images state
@@ -73,18 +73,20 @@ export const AnimatedGallery = (props: animatedGalleryProps) => {
 
   const scrollToActiveIndex = (index: any) => {
     setActiveIndex(index);
-
+    //@ts-ignore
     topRef?.current?.scrollToOffset({
       offset: index * width,
       Animated: true,
     });
 
     if (index * (IMAGE_SIZE + SPACING) - IMAGE_SIZE / 2 > width / 2) {
+      //@ts-ignore
       thumpRef?.current?.scrollToOffset({
         offset: index * (IMAGE_SIZE + SPACING) - width / 2 + IMAGE_SIZE / 2,
         animated: true,
       });
     } else {
+      //@ts-ignore
       thumpRef?.current?.scrollToOffset({
         offset: 0,
         animated: true,
@@ -101,7 +103,9 @@ export const AnimatedGallery = (props: animatedGalleryProps) => {
       return renderLoader;
     } else {
       return (
-        <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
+        <View
+          style={{ justifyContent: "center", alignItems: "center", flex: 1 }}
+        >
           <Text>Loading...</Text>
         </View>
       );
@@ -113,32 +117,33 @@ export const AnimatedGallery = (props: animatedGalleryProps) => {
    */
 
   return (
-    <View style={{flex: 1, backgroundColor: 'black'}}>
+    <View style={{ flex: 1, backgroundColor: "black" }}>
       <FlatList
+        //@ts-ignore
         ref={topRef}
         data={images}
-        keyExtractor={item => item.id.toString()}
+        keyExtractor={(item: any) => item.id.toString()}
         horizontal
         pagingEnabled
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
-        onMomentumScrollEnd={e => {
+        onMomentumScrollEnd={(e) => {
           scrollToActiveIndex(
-            Math.floor(e.nativeEvent.contentOffset.x / width),
+            Math.floor(e.nativeEvent.contentOffset.x / width)
           );
         }}
-        renderItem={({item}) => {
+        renderItem={({ item }: { item: any }) => {
           return (
-            <View style={{width: width, height: height}}>
+            <View style={{ width: width, height: height }}>
               <Image
-                source={{uri: item.url}}
+                source={{ uri: item.url }}
                 style={
                   disablefullScreen
                     ? {
                         width: width,
                         height: width / 1.3,
-                        alignSelf: 'center',
-                        justifyContent: 'center',
+                        alignSelf: "center",
+                        justifyContent: "center",
                         top: width / 1.5,
                       }
                     : [StyleSheet.absoluteFillObject]
@@ -151,18 +156,19 @@ export const AnimatedGallery = (props: animatedGalleryProps) => {
 
       <FlatList
         data={images}
+        //@ts-ignore
         ref={thumpRef}
-        keyExtractor={item => item.id.toString()}
+        keyExtractor={(item: any) => item.id.toString()}
         horizontal
         pagingEnabled
         showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{paddingHorizontal: SPACING}}
-        style={{position: 'absolute', bottom: IMAGE_SIZE}}
-        renderItem={({item, index}) => {
+        contentContainerStyle={{ paddingHorizontal: SPACING }}
+        style={{ position: "absolute", bottom: IMAGE_SIZE }}
+        renderItem={({ item, index }: { item: any; index: any }) => {
           return (
             <TouchableOpacity onPress={() => scrollToActiveIndex(index)}>
               <Image
-                source={{uri: item.url}}
+                source={{ uri: item.url }}
                 style={[
                   {
                     width: IMAGE_SIZE,
@@ -173,7 +179,7 @@ export const AnimatedGallery = (props: animatedGalleryProps) => {
                     borderColor:
                       activeIndex === index
                         ? THUMP_BORDER_COLOR
-                        : 'transparent',
+                        : "transparent",
                   },
                 ]}
               />
