@@ -1,0 +1,35 @@
+{
+  "name": "react-native-animated-gallery",
+  "version": "1.0.0",
+  "description": " Tiny and fast animated image gallery for react-native",
+  "main": "index.ts",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vivekjm/react-native-animated-gallery.git"
+  },
+  "keywords": [
+    "gallery",
+    "imageslider",
+    "carousel",
+    "flatlist",
+    "react-native",
+    "react-component",
+    "animated-gallery",
+    "react-native-gallery"
+  ],
+  "author": "Vivek JM",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vivekjm/react-native-animated-gallery/issues"
+  },
+  "homepage": "https://github.com/vivekjm/react-native-animated-gallery#readme",
+  "dependencies": {
+    "ts-node": "^10.0.0"
+  }
+}
