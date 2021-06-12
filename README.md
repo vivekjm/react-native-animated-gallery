@@ -1,6 +1,6 @@
 # React Native Animated Gallery
 
-## ![npm](https://img.shields.io/npm/l/react-native-animated-gallery) ![npm](https://img.shields.io/npm/v/react-native-animated-gallery) ![npm](https://img.shields.io/david/dev/vivekjm/react-native-animated-gallery) ![](https://img.shields.io/npm/dw/react-native-animated-gallery)
+## ![npm](https://img.shields.io/npm/l/react-native-animated-gallery) ![npm](https://img.shields.io/npm/v/react-native-animated-gallery) ![](https://img.shields.io/npm/dw/react-native-animated-gallery) ![](https://img.shields.io/npm/types/react-native-animated-gallery)
 
 #
 
@@ -39,7 +39,7 @@ Then use it like this.
 ```javascript
 import * as React from "react";
 import { Text, View } from "react-native";
-import AnimatedGallery from "./components/index";
+import AnimatedGallery from "react-native-animated-gallery";
 
 export default () => {
   const images = [
@@ -57,7 +57,7 @@ export default () => {
     },
   ];
 
-  const Laoder = () => {
+  const Loader = () => {
     return (
       <View style={{ justifyContent: "center", alignItems: "center", flex: 1 }}>
         <Text>Custom Loader..</Text>
@@ -69,7 +69,7 @@ export default () => {
     <View style={{ flex: 1, backgroundColor: "#fff" }}>
       <AnimatedGallery
         imageUrls={images}
-        renderLoader={<Laoder />}
+        renderLoader={<Loader />}
         disablefullScreen={false}
         thumpBorderWidth={3}
         thumpBorderColor={"white"}
