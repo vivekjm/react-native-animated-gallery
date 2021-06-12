@@ -1,6 +1,6 @@
 # React Native Animated Gallery
 
-## ![npm](https://img.shields.io/npm/l/react-native-animated-gallery) ![npm](https://img.shields.io/npm/v/react-native-animated-gallery) ![npm](https://img.shields.io/david/DIGIEGGS/rn-country-code-picker)
+## ![npm](https://img.shields.io/npm/l/react-native-animated-gallery) ![npm](https://img.shields.io/npm/v/react-native-animated-gallery) ![npm](https://img.shields.io/david/dev/vivekjm/react-native-animated-gallery) ![](https://img.shields.io/npm/dw/react-native-animated-gallery)
 
 #
 
@@ -39,7 +39,7 @@ Then use it like this.
 ```javascript
 import * as React from "react";
 import { Text, View } from "react-native";
-import AnimatedGallery from "react-native-animated-gallery";
+import AnimatedGallery from "./components/index";
 
 export default () => {
   const images = [
@@ -55,25 +55,9 @@ export default () => {
       id: 3,
       url: "https://images.pexels.com/photos/1624360/pexels-photo-1624360.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
     },
-    {
-      id: 4,
-      url: "https://images.pexels.com/photos/1019335/nature-stars-milky-way-galaxy-1019335.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
-    },
-    {
-      id: 5,
-      url: "https://images.pexels.com/photos/623218/pexels-photo-623218.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
-    },
-    {
-      id: 6,
-      url: "https://images.pexels.com/photos/1693095/pexels-photo-1693095.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
-    },
-    {
-      id: 7,
-      url: "https://images.pexels.com/photos/5939672/pexels-photo-5939672.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
-    },
   ];
 
-  const Loader = () => {
+  const Laoder = () => {
     return (
       <View style={{ justifyContent: "center", alignItems: "center", flex: 1 }}>
         <Text>Custom Loader..</Text>
@@ -85,8 +69,18 @@ export default () => {
     <View style={{ flex: 1, backgroundColor: "#fff" }}>
       <AnimatedGallery
         imageUrls={images}
-        renderLoader={<Loader />}
+        renderLoader={<Laoder />}
         disablefullScreen={false}
+        thumpBorderWidth={3}
+        thumpBorderColor={"white"}
+        spacing={8}
+        imageSize={90}
+        backgroundColor={"#0000"}
+        onEndReached={() => {
+          console.log("End reached");
+        }}
+        invertThumpDirection={false}
+        invertGalleryDirection={false}
       />
     </View>
   );
@@ -102,6 +96,10 @@ export default () => {
 - [`thumpBorderWidth`](#thumpBorderWidth)
 - [`thumpBorderColor`](#thumpBorderColor)
 - [`disablefullScreen`](#disablefullScreen)
+- [`backgroundColor`](#backgroundColor)
+- [`onEndReached`](#onEndReached)
+- [`invertThumpDirection`](#invertThumpDirection)
+- [`invertGalleryDirection`](#invertGalleryDirection)
 
 ---
 
@@ -172,6 +170,38 @@ Set the border color for thump nail
 ### `disablefullScreen`
 
 Disable the fullscreen view of image
+
+| Type    | Required |
+| ------- | -------- |
+| boolean | No       |
+
+### `backgroundColor`
+
+Set the backgroundColor for gallery when not in fullscreen mode
+
+| Type   | Required |
+| ------ | -------- |
+| string | No       |
+
+### `onEndReached`
+
+Called when all rows have been rendered and the list has been scrolled to within onEndReachedThreshold of the bottom. The native scroll event is provided.
+
+| Type     | Required |
+| -------- | -------- |
+| function | No       |
+
+### `invertThumpDirection`
+
+Reverses the direction of scroll. Uses scale transforms of -1.
+
+| Type    | Required |
+| ------- | -------- |
+| boolean | No       |
+
+### `invertThumpDirection`
+
+Reverses the direction of scroll of gallery. Uses scale transforms of -1.
 
 | Type    | Required |
 | ------- | -------- |

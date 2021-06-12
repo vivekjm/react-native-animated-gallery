@@ -25,6 +25,10 @@ export const AnimatedGallery = (props: animatedGalleryProps) => {
     imageSize,
     renderLoader,
     disablefullScreen,
+    backgroundColor,
+    onEndReached,
+    invertThumpDirection,
+    invertGalleryDirection,
   } = props;
 
   /**
@@ -54,6 +58,7 @@ export const AnimatedGallery = (props: animatedGalleryProps) => {
   const SPACING = spacing ? spacing : 10;
   const THUMP_BORDER_WIDTH = thumpBorderWidth ? thumpBorderWidth : 2;
   const THUMP_BORDER_COLOR = thumpBorderColor ? thumpBorderColor : "#ffff";
+  const BACKGROUND_COLOR = backgroundColor ? backgroundColor : "#0000";
 
   /**
    * when the compoent mounts the value from the imageUrl props is locally saved to images state
@@ -117,7 +122,7 @@ export const AnimatedGallery = (props: animatedGalleryProps) => {
    */
 
   return (
-    <View style={{ flex: 1, backgroundColor: "black" }}>
+    <View style={{ flex: 1, backgroundColor: BACKGROUND_COLOR }}>
       <FlatList
         //@ts-ignore
         ref={topRef}
@@ -127,6 +132,7 @@ export const AnimatedGallery = (props: animatedGalleryProps) => {
         pagingEnabled
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
+        inverted={invertGalleryDirection}
         onMomentumScrollEnd={(e) => {
           scrollToActiveIndex(
             Math.floor(e.nativeEvent.contentOffset.x / width)
@@ -162,6 +168,8 @@ export const AnimatedGallery = (props: animatedGalleryProps) => {
         horizontal
         pagingEnabled
         showsHorizontalScrollIndicator={false}
+        onEndReached={onEndReached}
+        inverted={invertThumpDirection}
         contentContainerStyle={{ paddingHorizontal: SPACING }}
         style={{ position: "absolute", bottom: IMAGE_SIZE }}
         renderItem={({ item, index }: { item: any; index: any }) => {
