@@ -1,6 +1,6 @@
 # React Native Animated Gallery
 
-## ![npm](https://img.shields.io/npm/l/react-native-animated-gallery) ![npm](https://img.shields.io/npm/v/react-native-animated-gallery) ![](https://img.shields.io/npm/dw/react-native-animated-gallery) ![](https://img.shields.io/npm/types/react-native-animated-gallery)
+## ![npm](https://img.shields.io/npm/l/react-native-animated-gallery?style=for-the-badge) ![npm](https://img.shields.io/npm/v/react-native-animated-gallery?style=for-the-badge) ![](https://img.shields.io/npm/dw/react-native-animated-gallery?style=for-the-badge) ![](https://img.shields.io/npm/types/react-native-animated-gallery?style=for-the-badge)
 
 #
 
