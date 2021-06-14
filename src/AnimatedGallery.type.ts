@@ -12,25 +12,25 @@ export type animatedGalleryProps = {
     renderLoader?: React.ReactElement | null;
 
     /**
-     * Set the size of the thump nail to square proprtion.
+     * Set the size of the thumb nail to square proprtion.
      */
 
     imageSize?: number;
 
     /**
-     * Set the sapcing between thump nail
+     * Set the sapcing between thumb nail
      */
     spacing?: number;
 
     /**
-     * Set the border width for thump nail
+     * Set the border width for thumb nail
      */
-    thumpBorderWidth?: number;
+    thumbBorderWidth?: number;
 
     /**
-     * Set the border color for thump nail
+     * Set the border color for thumb nail
      */
-    thumpBorderColor?: string;
+    thumbBorderColor?: string;
 
     /**
      * Disable the fullscreen view of image
@@ -53,7 +53,7 @@ export type animatedGalleryProps = {
     /**
    * Reverses the direction of scroll. Uses scale transforms of -1.
    */
-    invertThumpDirection?: boolean | null;
+    invertThumbDirection?: boolean | null;
 
 
     /**

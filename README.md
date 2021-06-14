@@ -71,15 +71,15 @@ export default () => {
         imageUrls={images}
         renderLoader={<Loader />}
         disablefullScreen={false}
-        thumpBorderWidth={3}
-        thumpBorderColor={"white"}
+        thumbBorderWidth={3}
+        thumbBorderColor={"white"}
         spacing={8}
         imageSize={90}
         backgroundColor={"#0000"}
         onEndReached={() => {
-          console.log("End reached");
+          console.log("yay! end reached");
         }}
-        invertThumpDirection={false}
+        invertThumbDirection={false}
         invertGalleryDirection={false}
       />
     </View>
@@ -93,12 +93,12 @@ export default () => {
 - [`renderLoader`](#renderLoader)
 - [`imageSize`](#imageSize)
 - [`spacing`](#spacing)
-- [`thumpBorderWidth`](#thumpBorderWidth)
-- [`thumpBorderColor`](#thumpBorderColor)
+- [`thumbBorderWidth`](#thumbBorderWidth)
+- [`thumbBorderColor`](#thumbBorderColor)
 - [`disablefullScreen`](#disablefullScreen)
 - [`backgroundColor`](#backgroundColor)
 - [`onEndReached`](#onEndReached)
-- [`invertThumpDirection`](#invertThumpDirection)
+- [`invertThumbDirection`](#invertThumbDirection)
 - [`invertGalleryDirection`](#invertGalleryDirection)
 
 ---
@@ -129,7 +129,7 @@ Custom loader for component
 
 ### `imageSize`
 
-Set the size of the thump nail to square proprtion
+Set the size of the thumb nail to square proprtion
 
 | Type      | Required |
 | --------- | -------- |
@@ -139,7 +139,7 @@ Set the size of the thump nail to square proprtion
 
 ### `spacing`
 
-Set the sapcing between thump nail.
+Set the sapcing between thumb nail.
 
 | Type    | Required |
 | ------- | -------- |
@@ -147,9 +147,9 @@ Set the sapcing between thump nail.
 
 ---
 
-### `thumpBorderWidth`
+### `thumbBorderWidth`
 
-Set the border width for thump nail.
+Set the border width for thumb nail.
 
 | Type   | Required |
 | ------ | -------- |
@@ -157,9 +157,9 @@ Set the border width for thump nail.
 
 ---
 
-### `thumpBorderColor`
+### `thumbBorderColor`
 
-Set the border color for thump nail
+Set the border color for thumb nail
 
 | Type   | Required |
 | ------ | -------- |
@@ -191,7 +191,7 @@ Called when all rows have been rendered and the list has been scrolled to within
 | -------- | -------- |
 | function | No       |
 
-### `invertThumpDirection`
+### `invertThumbDirection`
 
 Reverses the direction of scroll. Uses scale transforms of -1.
 
@@ -199,7 +199,7 @@ Reverses the direction of scroll. Uses scale transforms of -1.
 | ------- | -------- |
 | boolean | No       |
 
-### `invertThumpDirection`
+### `invertThumbDirection`
 
 Reverses the direction of scroll of gallery. Uses scale transforms of -1.
 
@@ -208,3 +208,17 @@ Reverses the direction of scroll of gallery. Uses scale transforms of -1.
 | boolean | No       |
 
 ---
+
+## Author
+
+<table>
+  <tr>
+    <td>
+      <img src="https://avatars.githubusercontent.com/u/24496671?v=4" width="100"  style="border-radius:50%">
+    </td>
+    <td>
+      Vivek JM<br />
+      <a href="mailto:vivekjm77@gmail.com">vivekjm77@gmail.com</a><br />
+    </td>
+  </tr>
+</table>

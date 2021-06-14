@@ -20,14 +20,14 @@ export const AnimatedGallery = (props: animatedGalleryProps) => {
   const {
     imageUrls,
     spacing,
-    thumpBorderWidth,
-    thumpBorderColor,
+    thumbBorderWidth,
+    thumbBorderColor,
     imageSize,
     renderLoader,
     disablefullScreen,
     backgroundColor,
     onEndReached,
-    invertThumpDirection,
+    invertThumbDirection,
     invertGalleryDirection,
   } = props;
 
@@ -36,7 +36,7 @@ export const AnimatedGallery = (props: animatedGalleryProps) => {
    */
 
   const topRef = React.useRef();
-  const thumpRef = React.useRef();
+  const thumbRef = React.useRef();
 
   /**
    * Local state to keep the images array recevied as props
@@ -56,8 +56,8 @@ export const AnimatedGallery = (props: animatedGalleryProps) => {
 
   const IMAGE_SIZE = imageSize ? imageSize : 80;
   const SPACING = spacing ? spacing : 10;
-  const THUMP_BORDER_WIDTH = thumpBorderWidth ? thumpBorderWidth : 2;
-  const THUMP_BORDER_COLOR = thumpBorderColor ? thumpBorderColor : "#ffff";
+  const thumb_BORDER_WIDTH = thumbBorderWidth ? thumbBorderWidth : 2;
+  const thumb_BORDER_COLOR = thumbBorderColor ? thumbBorderColor : "#ffff";
   const BACKGROUND_COLOR = backgroundColor ? backgroundColor : "#0000";
 
   /**
@@ -71,7 +71,7 @@ export const AnimatedGallery = (props: animatedGalleryProps) => {
   }, [imageUrls]);
 
   /**
-    Scroll to active index accepts index of the curent position as argument and onPress of the thumpNail
+    Scroll to active index accepts index of the curent position as argument and onPress of the thumbNail
     parent flatlist item will be pushed to the current screnn by calculating the offset value to which the rendered item need to be moved
 
   */
@@ -86,13 +86,13 @@ export const AnimatedGallery = (props: animatedGalleryProps) => {
 
     if (index * (IMAGE_SIZE + SPACING) - IMAGE_SIZE / 2 > width / 2) {
       //@ts-ignore
-      thumpRef?.current?.scrollToOffset({
+      thumbRef?.current?.scrollToOffset({
         offset: index * (IMAGE_SIZE + SPACING) - width / 2 + IMAGE_SIZE / 2,
         animated: true,
       });
     } else {
       //@ts-ignore
-      thumpRef?.current?.scrollToOffset({
+      thumbRef?.current?.scrollToOffset({
         offset: 0,
         animated: true,
       });
@@ -163,13 +163,13 @@ export const AnimatedGallery = (props: animatedGalleryProps) => {
       <FlatList
         data={images}
         //@ts-ignore
-        ref={thumpRef}
+        ref={thumbRef}
         keyExtractor={(item: any) => item.id.toString()}
         horizontal
         pagingEnabled
         showsHorizontalScrollIndicator={false}
         onEndReached={onEndReached}
-        inverted={invertThumpDirection}
+        inverted={invertThumbDirection}
         contentContainerStyle={{ paddingHorizontal: SPACING }}
         style={{ position: "absolute", bottom: IMAGE_SIZE }}
         renderItem={({ item, index }: { item: any; index: any }) => {
@@ -183,10 +183,10 @@ export const AnimatedGallery = (props: animatedGalleryProps) => {
                     height: IMAGE_SIZE,
                     borderRadius: 12,
                     marginRight: SPACING,
-                    borderWidth: THUMP_BORDER_WIDTH,
+                    borderWidth: thumb_BORDER_WIDTH,
                     borderColor:
                       activeIndex === index
-                        ? THUMP_BORDER_COLOR
+                        ? thumb_BORDER_COLOR
                         : "transparent",
                   },
                 ]}
