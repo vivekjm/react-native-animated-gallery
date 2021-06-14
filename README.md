@@ -208,3 +208,17 @@ Reverses the direction of scroll of gallery. Uses scale transforms of -1.
 | boolean | No       |
 
 ---
+
+## Author
+
+<table>
+  <tr>
+    <td>
+      <img src="https://avatars.githubusercontent.com/u/24496671?v=4" width="100"  style="border-radius:50%">
+    </td>
+    <td>
+      Vivek JM<br />
+      <a href="mailto:vivekjm77@gmail.com">vivekjm77@gmail.com</a><br />
+    </td>
+  </tr>
+</table>
