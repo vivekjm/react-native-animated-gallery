@@ -199,7 +199,7 @@ Reverses the direction of scroll. Uses scale transforms of -1.
 | ------- | -------- |
 | boolean | No       |
 
-### `invertThumbDirection`
+### `invertGalleryDirection`
 
 Reverses the direction of scroll of gallery. Uses scale transforms of -1.
 
