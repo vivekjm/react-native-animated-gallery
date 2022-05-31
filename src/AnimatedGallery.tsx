@@ -1,6 +1,7 @@
 import * as React from "react"
 import { FlatList, Image, Text, View, Dimensions, StyleSheet, TouchableOpacity } from "react-native"
 import { animatedGalleryProps } from "./AnimatedGallery.type"
+import ZoomView from "./ZoomView"
 
 const { width, height } = Dimensions.get("screen")
 
@@ -31,6 +32,7 @@ export const AnimatedGallery = (props: animatedGalleryProps) => {
   const topRef = React.useRef()
   const thumbRef = React.useRef()
 
+  const [zoomLevel, setZoomLevel] = React.useState(1)
   /**
    * Local state to keep the images array recevied as props
    */
@@ -123,6 +125,7 @@ export const AnimatedGallery = (props: animatedGalleryProps) => {
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
         inverted={invertGalleryDirection}
+        scrollEnabled={zoomLevel === 1}
         onMomentumScrollEnd={(e) => {
           scrollToActiveIndex(Math.floor(e.nativeEvent.contentOffset.x / width))
         }}
@@ -134,20 +137,20 @@ export const AnimatedGallery = (props: animatedGalleryProps) => {
         renderItem={({ item }: { item: any }) => {
           return (
             <View style={{ width: width, height: height }}>
-              <Image
-                source={{ uri: item.url }}
+              <View
                 style={
                   disablefullScreen
                     ? {
                         width: width,
-                        height: width / 1.3,
+                        height: height,
                         alignSelf: "center",
                         justifyContent: "center",
-                        top: width / 1.5,
                       }
                     : [StyleSheet.absoluteFillObject]
                 }
-              />
+              >
+                <ZoomView imageWidth={width} imageUrl={item.url} onZoom={setZoomLevel} />
+              </View>
             </View>
           )
         }}
