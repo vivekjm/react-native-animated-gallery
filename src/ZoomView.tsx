@@ -22,7 +22,7 @@ export default function ZoomView(props: Props) {
         props.onZoom(ev.zoomLevel)
       }}
       onZoomEnd={(_, _a, event) => {
-        if (event.zoomLevel < 1) {
+        if (event.zoomLevel < 1.2) {
           zoomableViewRef.current?.zoomTo(1)
           props.onZoom(1)
         }

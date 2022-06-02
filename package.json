@@ -1,6 +1,6 @@
 {
-  "name": "react-native-animated-gallery",
-  "version": "1.1.5",
+  "name": "@akumzy/react-native-animated-gallery",
+  "version": "1.1.7",
   "description": " Tiny and fast animated image gallery for react-native",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vivekjm/react-native-animated-gallery.git"
+    "url": "git+https://github.com/akumzy/react-native-animated-gallery.git"
   },
   "keywords": [
     "gallery",
@@ -32,9 +32,9 @@
   "author": "Vivek JM",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vivekjm/react-native-animated-gallery/issues"
+    "url": "https://github.com/akumzy/react-native-animated-gallery/issues"
   },
-  "homepage": "https://github.com/vivekjm/react-native-animated-gallery#readme",
+  "homepage": "https://github.com/akumzy/react-native-animated-gallery#readme",
   "dependencies": {
     "@openspacelabs/react-native-zoomable-view": "^2.0.4"
   },
