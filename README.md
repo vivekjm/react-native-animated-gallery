@@ -4,7 +4,7 @@
 
 #
 
-#### 🚀 Tiny and fast animated image gallery for react-native
+#### 🚀 Tiny and fast animated image gallery with pinch/zoom support for react-native
 
 #
 
@@ -12,11 +12,11 @@
 
 ## Getting started
 
-`npm i react-native-animated-gallery --save`
+`npm i @akumzy/react-native-animated-gallery --save`
 
 or
 
-`yarn add react-native-animated-gallery`
+`yarn add @akumzy/react-native-animated-gallery`
 
 #### iOS
 
@@ -31,15 +31,15 @@ No additional step is required.
 First of all, import the component.
 
 ```javascript
-import AnimatedGallery from "react-native-animated-gallery";
+import AnimatedGallery from "@akumzy/react-native-animated-gallery"
 ```
 
 Then use it like this.
 
 ```javascript
-import * as React from "react";
-import { Text, View } from "react-native";
-import AnimatedGallery from "react-native-animated-gallery";
+import * as React from "react"
+import { Text, View } from "react-native"
+import AnimatedGallery from "@akumzy/react-native-animated-gallery"
 
 export default () => {
   const images = [
@@ -55,15 +55,15 @@ export default () => {
       id: 3,
       url: "https://images.pexels.com/photos/1624360/pexels-photo-1624360.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
     },
-  ];
+  ]
 
   const Loader = () => {
     return (
       <View style={{ justifyContent: "center", alignItems: "center", flex: 1 }}>
         <Text>Custom Loader..</Text>
       </View>
-    );
-  };
+    )
+  }
 
   return (
     <View style={{ flex: 1, backgroundColor: "#fff" }}>
@@ -77,14 +77,14 @@ export default () => {
         imageSize={90}
         backgroundColor={"#0000"}
         onEndReached={() => {
-          console.log("yay! end reached");
+          console.log("yay! end reached")
         }}
         invertThumbDirection={false}
         invertGalleryDirection={false}
       />
     </View>
-  );
-};
+  )
+}
 ```
 
 ## Props
